@@ -13,23 +13,30 @@ I already built a .NET Core Version of this API, you can find it here [Vuttr.Net
 This Ruby/Rails version is being built for study/work purposes
 
 * Ruby version
+
   2.6.5
 
 * Rails version
+
   6.0.3
 
 * System dependencies
+
   docker
   docker-compose
 
 * Configuration
+
   docker-compose build
 
 * Database creation
+
   docker-compose run --rm web rails db:create
 
 * Database initialization
+
   docker-compose run --rm web rails db:migrate
 
 * How to run the test suite
+
   docker-compose run --rm web rspec
