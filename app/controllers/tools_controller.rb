@@ -2,11 +2,7 @@ class ToolsController < ApplicationController
   before_action :set_tool, only: [:show, :update, :destroy]
 
   def index
-    if params[:tag].blank?
-      @tools = Tool.order(:id)
-    else
-      @tools = Tool.search(params[:tag])
-    end
+    @tools = params[:tag].blank? ? Tool.order(:id) : Tool.search(params[:tag])
   end
 
   def show
@@ -33,7 +29,6 @@ class ToolsController < ApplicationController
 
   def destroy
     @tool.destroy
-    render status: :no_content
   end
 
   private
